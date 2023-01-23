@@ -1,10 +1,14 @@
 // Değişkenler Variables
 
 const yourChoice = document.getElementById("your-choice")
+//benim seçimimin id sini bir değişkene atadık.👆
 const pcChoice = document.getElementById("pc-choice")
+//pc nin seçiminin id sini bir değişkene atadık👆
+
 const select = document.querySelector(".select")
-let userSelect; // Bizim seçimimiz
-let pcRandom; // Pc nin seçimi
+//taş-kağıt-makas hepsinin parenti olan select divini bir değişkene atadık👆
+let userSelect; // Bizim seçimimiz i bir değişkende saklasın
+let pcRandom; // Pc nin seçimi i bir değişkende saklasın.
 
 //score yazabilmek için
 const scoreYou = document.getElementById("you")
@@ -23,15 +27,15 @@ const final = document.getElementById("final");
 
 // Event listeners
 // Ekrandan tıklanan elemente göre bizim seçimimizi ekrana yazdırır.
-
+//select divine eventlistener tıklayarak gereksiz kalabalığın önüne geçtik.👇
 select.addEventListener("click", (e) => {
-    // console.log(e.target.className)
-    // console.log(e.target.getAttribute("alt"))
+    // console.log(e.target.className)--->target nereye tıkladığımı gösteriyor.targetinin classnameini yakalar.
+    // console.log(e.target.getAttribute("alt"))--->tıkladığım elementin target ile getattribute ni yakalarım .alt attributenu.
     // Bu if le boş tıklamanın önüne geçiyoruz.
     if (e.target.getAttribute("alt")) {
 
         userSelect = e.target.getAttribute("alt")
-        yourChoice.innerHTML = `<img src="./assets/${userSelect}.png"></img>`;
+        yourChoice.innerHTML = `<img src="${userSelect}.png"></img>`;
         pc()
     }
 
@@ -45,7 +49,7 @@ function pc() {
     // pcRandom = 'tas'
 
     // console.log(pcRandom)
-    pcChoice.innerHTML = `<img src="./assets/${pcRandom}.png"></img>`;
+    pcChoice.innerHTML = `<img src="${pcRandom}.png"></img>`;
     result();
 }
 
@@ -183,14 +187,14 @@ const makasImage = document.querySelector(".makas");
 tasImage.addEventListener('click',(e)=>{
     console.log(e)
     yourChoice.innerHTML = `<img src="./assets/tas.png"></img>`
-})
+})taşa tıklandığında(seçtiğimde) taş resmi altta gözükecek
 
 kagitImage.addEventListener('click',(e)=>{
     console.log(e)
     yourChoice.innerHTML = `<img src="./assets/kagit.png"></img>`;
-})
+})kağıda tıklandığında (seçtiğimde) kağıt fotosu altta gözükecek
 
 makasImage.addEventListener('click',(e)=>{
     console.log(e)
     yourChoice.innerHTML = `<img src="./assets/makas.png"></img>`;
-}) */ 
+}) */ //makasa tıkladığımda (seçtiğimde)makas foto çıkacak altta
