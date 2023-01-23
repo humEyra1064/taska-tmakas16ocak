@@ -88,14 +88,14 @@ function result() {
             break;
     }
 
-//Beraberlik durumu
+//Beraberlik durumu yaptığımız her seçimde beraberlik varsa yine ikinci class tanımlıyoruz active classı ve resultdivin innerhtml ine it's a draw yazdırıyoruz.
     if (userSelect == pcRandom) {
         resultDiv.classList.add("active");
         resultDiv.innerHTML = "It's a draw"
         containerEl.style.boxShadow = "3px 3px 10px 1px #FFC538";
         resultDiv.style.backgroundColor = "#FFC538";
     }
-// Biz kazanırsak sonuç mesajını kazandınız olarak değiştirmek için
+// Biz oyunun sonunda  kazanırsak sonuç mesajını kazandınız olarak değiştirmek için .benim scorumun innertext i 10 a eşit ise süslünün içerisindekileri yap.
     if (scoreYou.innerText == '10') {
         final.innerHTML = `💃 You Win🕺`
         document.querySelector(".modal").style.backgroundColor = "#5AB7AC"
@@ -107,21 +107,22 @@ function result() {
         modal()
     }
 
-
+// ben veya pc 10 olursa bu maç bitsin👆
 }
 
-//Biz kaybedersek bu fonksiyon çağrılacak ve renkleri, mesajı değiştirecek
+//Biz her yaptığımız seçimde kaybedersek bu fonksiyon çağrılacak ve renkleri, mesajı değiştirecek css eklenen ikinci active class ile
 function lost() {
-    resultDiv.classList.add("active")
+    resultDiv.classList.add("active") 
     resultDiv.innerHTML = "You Lost"
     containerEl.style.boxShadow = "3px 3px 10px 1px #fb778b";
     resultDiv.style.backgroundColor = "#fb778b";
     scorePc.innerText++;
 }
 
-//Biz kazanırsak bu fonksiyon çağrılacak ve renkleri, mesajı değiştirecek
+//Biz her yaptığımız seçimde kazanırsak bu fonksiyon çağrılacak ve renkleri, mesajı değiştirecek csse eklenen ikinci active class ile
 function win() {
     resultDiv.classList.add("active")
+    //kazanırsam 
     resultDiv.innerHTML = "You Win"
     containerEl.style.boxShadow = "3px 3px 10px 1px #5AB7AC";
     resultDiv.style.backgroundColor = "#5AB7AC";
@@ -129,14 +130,14 @@ function win() {
 }
 
 
-// modal kullanımı aç 
+// modal kullanımı aç  ben veya pc 10 olursa çağıracağım modal fonksiyonu .var olan modal classına show classı ekledik
 function modal(){
     modalEl.classList.add("show");
 }
 
-// moddal kapa sayfayı yenile
+// moddal kapa sayfayı yenile.modal butonuna tıklandığında window.location.reload kalıp bir fonksiyondur sayfayı yenile anlamına gelir.
 modalBtn.addEventListener("click", ()=>{
-    // modalEl.classList.remove("show");
+    // modalEl.classList.remove("show");classı show olan modal classını direkt ekrandan siler böyle de olabilir.
     modalEl.style.display = "none";
     window.location.reload()
 })
