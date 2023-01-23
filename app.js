@@ -101,6 +101,7 @@ function result() {
         document.querySelector(".modal").style.backgroundColor = "#5AB7AC"
         modalBtn.style.color = "#5AB7AC"
         topScoreCheck()
+        //topscore fonksiyonu ile ben kazanırsam topscore getireceğim ekrana
     }
 
     if(scorePc.innerText == '10' || scoreYou.innerText == '10'){
@@ -130,7 +131,7 @@ function win() {
 }
 
 
-// modal kullanımı aç  ben veya pc 10 olursa çağıracağım modal fonksiyonu .var olan modal classına show classı ekledik
+// modal kullanımı aç.classı modal olan kısma show classını aç.  ben veya pc 10 olursa çağıracağım modal fonksiyonu .var olan modal classına show classı ekledik
 function modal(){
     modalEl.classList.add("show");
 }
@@ -145,11 +146,12 @@ modalBtn.addEventListener("click", ()=>{
 
 // local storage den high score u çek
 let storagedScore = localStorage.getItem("highScore")
+//local storageden highscore getir.
 console.log(storagedScore)
 
 let topScore; //ekrana yazdıracağım değer.
 
-
+//local storage git highscore getir eğer highscore yoksa yani birinin birine üstünlüğü yoksa storagedscore çaılşmaz else kısmı devreye girer ve topscore 0-0 olur.
 //local storage boş ise 0-0 yazdırmak için
 if(storagedScore){
     topScore = `10 - ${storagedScore}`
